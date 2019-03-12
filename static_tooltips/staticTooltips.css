@@ -1,0 +1,77 @@
+/* 
+Tooltips by iNet / IEVEVO
+Licensed under MIT Open Source
+*/
+
+
+#staticTooltip {
+	text-align: center;
+	background: #222;
+	width: 100px;
+	color: #aaa;
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	padding: 5px 10px 5px 10px;
+	border: 1px solid #000;
+	pointer-events: none;
+	
+	opacity: 0;
+	
+	z-index: 999;
+	position: absolute; left: -500px;
+	transition: 0.1s opacity;
+}
+
+#staticTooltip.tooltip-bottom {
+	position: relative; right: 50%;
+}
+
+#staticTooltip.visible {
+	opacity: 1;
+	transition: 0.2s opacity;
+}
+
+	/* carat triangle things */
+#staticTooltip.bottom::before {
+	content: "";
+	width: 0px;
+	height: 0px;
+	border: 10px solid transparent;
+	border-bottom: 10px solid #222;
+	z-index: 1;
+	
+	position: absolute; top: -15px; left: 40%;
+}
+
+#staticTooltip.top::after {
+	content: "";
+	width: 0px;
+	height: 0px;
+	border: 10px solid transparent;
+	border-top: 10px solid #222;
+	z-index: 1;
+	
+	position: absolute; bottom: -15px; left: 40%;
+}
+
+#staticTooltip.right::before {
+	content: "";
+	width: 0px;
+	height: 0px;
+	border: 10px solid transparent;
+	border-right: 10px solid #222;
+	z-index: 1;
+	
+	position: absolute; left: -15px; top: 20%;
+}
+
+#staticTooltip.left::before {
+	content: "";
+	width: 0px;
+	height: 0px;
+	border: 10px solid transparent;
+	border-left: 10px solid #222;
+	z-index: 1;
+	
+	position: absolute; right: -15px; top: 20%;
+}
