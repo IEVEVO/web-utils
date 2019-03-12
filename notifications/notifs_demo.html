@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+	
+	<script type="text/javascript" src="notifications.js"></script>
+	<link rel="stylesheet" href="notifications.css" />
+	
+	
+	<script>
+	
+	function testNotifCallback() {
+		
+		makeNotif("This notification does something funky when you click it", {
+			type: "info",
+			funct: function() {
+					// called when the notification is clicked.
+					// note that alert() freezes the page, so it won't register the onMouseUp trigger
+				
+				alert("bazinga");
+			}
+		});
+		
+	}
+	
+	</script>
+	
+</head>
+<body>
+	
+		<!-- This is where the notifications get displayed -->
+	<div class="notificationArea">
+		<ul id="notifs"></ul>
+	</div>
+	
+	
+	<button onClick="makeNotif('This is a notification')">Basic notification</button>
+	
+	<button onClick="makeNotif('You did it', {type: 'success'} )">Success notification</button>
+	<button onClick="makeNotif('You failed', {type: 'error'} )">Error notification</button>
+	
+	<button onClick="testNotifCallback()">Info notification (with callback)</button>
+	
+</body>
+</html>

@@ -1,0 +1,55 @@
+/*
+Notifications by iNet / IEVEVO
+Licensed under MIT Open Source
+*/
+
+
+@-webkit-keyframes fadeout {
+	0% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.fadeout {
+	animation: fadeout 5s forwards;
+	-webkit-animation: fadeout 5s forwards;
+}
+
+
+.notificationArea {
+		/* change these as u need */
+	z-index: 997;
+	font-family: Helvetica, sans-serif;
+	width: 800px;
+	
+	position: fixed; top: 50px;
+}
+
+.notificationArea li {
+	background: #333;
+	color: #fff;
+	padding: 10px;
+	width: 100%;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+.notificationArea li.success {
+	background: #3a0;
+}
+
+.notificationArea li.error {
+	background: #a30;
+}
+	
+.notificationArea li.info {
+	background: #08a;
+	margin-bottom: 0px;
+	font-size: 
+}
