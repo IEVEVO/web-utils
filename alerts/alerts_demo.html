@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+	
+	<script type="text/javascript" src="alerts.js"></script>
+	<link rel="stylesheet" href="alerts.css" />
+	
+	
+	<script>
+	
+	function testConfirm() {
+			// I recommend making a separate function for this as it can get pretty big.
+		
+		makeAlert("confirm", {
+			header: "This is a Yes or No question",
+			contents: "What will you pick?",
+			options: [
+				{
+					label: "Yes",
+					style: "btn-green",
+					funct: function() {
+						// yes
+						alert("You clicked Yes.");	
+					}
+				},
+				{
+					label: "No",
+					style: "btn-red"
+				}
+			]
+		});
+		
+	}
+	
+	</script>
+	
+</head>
+<body>
+	
+		<!-- This is where the alerts get displayed -->
+	<div class="alertArea">
+		<div class="background hidden" id="alerts-background"></div>
+		
+		<div id="alerts"></div>
+	</div>
+	
+	
+	<button onClick="makeAlert('info', {header: 'ALERT', contents: 'This is some information'})">Information alert</button>
+	
+	<button onClick="testConfirm()">Confirm window</button>
+	
+</body>
+</html>
