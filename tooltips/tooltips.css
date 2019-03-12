@@ -1,0 +1,18 @@
+/* 
+Tooltips by iNet / IEVEVO
+Licensed under MIT Open Source
+*/
+
+#tooltip {
+	text-align: center;
+	background: #222;
+	color: #aaa;
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	padding: 5px 10px 5px 10px;
+	border: 1px solid #000;
+	pointer-events: none;
+	
+	z-index: 999;
+	position: fixed; left: -500px;
+}
