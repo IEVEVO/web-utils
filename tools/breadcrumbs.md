@@ -44,7 +44,7 @@ There are a few settings you can change on each page, if you wish. These are mos
 
 To use them, simply create some `<script>` tags somewhere in the `<head>` section, and create the following variable inside:
 
-```text
+```javascript
 var breadcrumbs_options = {
   path: "/folder_1/folder_2/file.html",
   pageName: "Custom name"

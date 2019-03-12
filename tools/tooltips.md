@@ -14,14 +14,14 @@ description: Pure JS tooltips that follow your cursor.
 
 First, you'll need to load the .JS and .CSS files. Place these lines somewhere between the `<head>` and `</head>` tags:
 
-```text
+```markup
 <script type="text/javascript" src="tooltips.js"></script>
 <link rel="stylesheet" href="tooltips.css" />
 ```
 
 Then, on the element you want the tooltip to appear on, add the class `give-tooltip`. Then, write whatever message you want displayed in the tooltip inside an attribute called `data-tooltip` \(see example below\):
 
-```text
+```markup
 <div class="give-tooltip" data-tooltip="This is a tooltip">Basic tooltip</div>
 ```
 

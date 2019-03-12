@@ -16,28 +16,31 @@ description: >-
 
 Regardless of what you're doing, you're gonna need to import the JS and CSS files:
 
-```text
+```markup
 <script type="text/javascript" src="alerts.js"></script>
 <link rel="stylesheet" href="alerts.css" />
 ```
 
 ## Alerts
 
-The basic format of the `makeAlert()` function is: `makeAlert(<type>, { header: "Header text", contents: "Body text" });` ...Where:
+The basic format of the `makeAlert()` function is: 
 
-`header` is the big title text at the top of the alert.
+```javascript
+makeAlert(<type>, { header: "Header text", contents: "Body text" });
+```
 
-`contents` parameter is the body text.
+...where:
 
-{% hint style="info" %}
+* `header` is the big title text at the top of the alert
+* `contents` parameter is the body text.
+
 I'd recommend taking a look at the demo above before continuing, to get an idea of what these look like.
-{% endhint %}
 
 ### Info Alert
 
 An information alert contains just a header and body with a "Dismiss" button. These are the simplest alerts to create, as they only contain 2 customisable elements:
 
-```text
+```javascript
 makeAlert("info", {
   header: 'ALERT',
   contents: 'This is some information'
@@ -52,7 +55,7 @@ These alerts are a little more spicy, as similar to the built-in `confirm()` fun
 
 ![Confirmation alert](../.gitbook/assets/chrome_2019-03-07_03-28-52.png)
 
-```text
+```javascript
 makeAlert("confirm", {
   header: "This is a Yes or No question",
   contents: "What will you pick?",
@@ -89,20 +92,20 @@ These are smaller notifications that pop up and then disappear after a while \(5
 
 To start, import the JS and CSS files as usual:
 
-```text
+```markup
 <script type="text/javascript" src="notifications.js"></script>
 <link rel="stylesheet" href="notifications.css" />
 ```
 
 These are much simpler to implement than the alerts. All you need for a basic notification is this:
 
-```text
+```javascript
 makeNotif('This is a notification');
 ```
 
 You can get a little fancier though; it takes a second parameter in the form of an object:
 
-```text
+```javascript
 makeNotif(
   "This notification does something funky when you click it", 
   {
