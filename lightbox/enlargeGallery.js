@@ -36,6 +36,7 @@ function displayImg(src) {
 	
 }
 
+
 function enlargeImg(srcImg) {
 	
 		// store metadata
@@ -54,9 +55,17 @@ function enlargeImg(srcImg) {
 	
 	
 		// Actually enlarge the image
-	displayImg(srcImg.src);
+	var large_src = srcImg.src;
+	
+			// if an alternate SRC is supplied, use this instead
+	if(srcImg.getAttribute("data-large-src") != null) {
+		large_src = srcImg.getAttribute("data-large-src");
+	}
+	
+	displayImg(large_src);
 	id("enlarged-image").parentNode.classList.add("open");
 }
+
 
 function unenlargeImg() {
 		// Close
@@ -68,34 +77,64 @@ function unenlargeImg() {
 
 function nextImage() {
 		// Loads the next image in line
+	var src = "";
 	
+	
+		// change index
 	if(gallery_info.currentIndex + 1 >= gallery_info.imgs.length) {
 			// if at the end of the queue
 		gallery_info.currentIndex = 0;
-		displayImg(gallery_info.imgs[0].src);
 	}
-	
 	else {
 			// if not at end of queue
 		gallery_info.currentIndex = parseInt(gallery_info.currentIndex) + 1;
-		displayImg(gallery_info.imgs[gallery_info.currentIndex].src);
 	}
+	
+	
+		// if alt SRC supplied, use this
+	if(gallery_info.imgs[gallery_info.currentIndex].getAttribute("data-large-src") != null) {
+		src = gallery_info.imgs[gallery_info.currentIndex].getAttribute("data-large-src");
+	}
+		// otherwise, use the src from the img tag
+	else {
+		src = gallery_info.imgs[gallery_info.currentIndex].src;
+	}
+	
+	
+		// display image
+	displayImg(src);
 }
+
 
 function prevImage() {
 		// Loads the next image in line
+	var src = "";
+	
+	
+		// change index
 	if(gallery_info.currentIndex <= 0) {
 			// if at the end of the queue
 		gallery_info.currentIndex = gallery_info.imgs.length - 1;
-		displayImg(gallery_info.imgs[gallery_info.currentIndex].src);
 	}
 	
 	else {
 			// if not at end of queue
 		gallery_info.currentIndex = parseInt(gallery_info.currentIndex) - 1;
-		displayImg(gallery_info.imgs[gallery_info.currentIndex].src);
 	}
 	
+	
+		// if alt SRC supplied, use this
+	if(gallery_info.imgs[gallery_info.currentIndex].getAttribute("data-large-src") != null) {
+		src = gallery_info.imgs[gallery_info.currentIndex].getAttribute("data-large-src");
+	}
+		// otherwise, use the src from the img tag
+	else {
+		src = gallery_info.imgs[gallery_info.currentIndex].src;
+	}
+	
+	
+		// display image
+	displayImg(src);
 }
 
 
@@ -121,7 +160,6 @@ function initialise() {
 			
 		}
 	}
-	
 	
 }
 

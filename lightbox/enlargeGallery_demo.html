@@ -5,6 +5,18 @@
 	<script src="enlargeGallery.js" type="text/javascript"></script>
 	<link href="enlargeGallery.css" rel="stylesheet" />
 	
+	
+	<style>
+	body {
+		font-family: sans-serif;
+	}
+	.gallery, h1, p, hr {
+		width: 1020px;
+		display: block;
+		margin: 15px auto 15px auto;
+	}
+	</style>
+	
 </head>
 <body>
 	
@@ -23,6 +35,31 @@
 		<img data-gallery-index="1" src="https://66.media.tumblr.com/220a3e731fefcf2d72f1d3771b8de242/tumblr_pmz38qB4EI1wnafjio3_r1_1280.jpg" width="500" />
 		<img data-gallery-index="2" src="https://66.media.tumblr.com/3c3409e328322fee66be4c2f9bff16f7/tumblr_pmprkd38T01wnafjio1_1280.jpg" width="500" />
 	</div>
+	
+	<hr>
+	
+	<h1>Image that changes SRC when enlarged</h1>
+	
+	<div class="gallery">
+		<img 
+			src="https://66.media.tumblr.com/f7fa83c341feb9591b49c8967d77e999/tumblr_pn2kdw3CY91wnafjio1_500.jpg" 
+			data-large-src="https://66.media.tumblr.com/f459c9c4c0d51827cc11ea054327456f/tumblr_po5hccIc9l1wnafjio1_r1_1280.jpg" 
+			data-gallery-index="0"
+			width="500" 
+		/>
+		<img 
+			src="https://66.media.tumblr.com/c777befcb267d82c06ce86d43bda908b/tumblr_pnl1swdBSJ1wnafjio1_500.jpg" 
+			data-large-src="https://66.media.tumblr.com/72583799dd5e6cb05801fdcce2ac3d99/tumblr_pnuonkvlBY1wnafjio1_1280.jpg" 
+			data-gallery-index="1"
+			width="500" 
+		/>
+	</div>
+	
+	<hr>
+	
+	<p>
+		Images from <a href="http://skypalace.co.vu">Sky Palace</a>
+	</p>
 	
 </body>
 </html>
